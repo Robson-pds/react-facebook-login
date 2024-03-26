@@ -10,6 +10,10 @@
   ],
   "description": "Well-typed React Component for Facebook Login",
   "main": "dist/index.js",
+  "files": [
+    "dist/*",
+    "src/*"
+  ],
   "scripts": {
     "check:lint": "eslint \"src/**/*.{ts,tsx}\" --fix",
     "check:type": "tsc --noEmit",
@@ -19,7 +23,9 @@
     "coverage": "jest --coverage",
     "build": "rimraf -rf dist && tsc -p tsconfig.json",
     "prepublish:npm": "npm run check && npm run build",
-    "publish:npm": "npm publish --public"
+    "publish:npm": "npm publish --public",
+    "prepack": "tsc",
+    "prepare": "tsc"
   },
   "author": "greatSumini <greatSumini@gmail.com> (https://sumini.dev)",
   "license": "MIT",
